@@ -3,14 +3,37 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { LocationsComponent } from './locations/locations.component';
+import { AllGroundsComponent } from './all-grounds/all-grounds.component';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { HeaderComponent } from './header/header.component';
+import { ContactComponent } from './contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AllGroundsCardsComponent } from './all-grounds-cards/all-grounds-cards.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    LocationsComponent,
+    AllGroundsComponent,
+    LoginComponent,
+    RegistrationComponent,
+    HeaderComponent,
+    ContactComponent,
+    AllGroundsCardsComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration()

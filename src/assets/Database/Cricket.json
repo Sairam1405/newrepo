@@ -1,0 +1,60 @@
+{
+    "Grounds": [
+        {
+            "groundid": 1,
+            "location": "Bengalore",
+            "groundname": "Chinnaswamy ",
+            "imageurl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBtOWp1pwUo9jqmQmfDzKPRJG1jx8dykeHyg&usqp=CAU",
+            "price": 15000,
+            "contact": 9955485896,
+            "Capacity": 50000,
+            "email": "abc@gmail.com",
+            "description":"M. Chinnaswamy Stadium, located in Bangalore, India, is one of the premier cricket stadiums in the country. Named after M. Chinnaswamy, who was the president of the Board of Control for Cricket in India (BCCI), it has a seating capacity of around 38,000 spectators. The stadium has witnessed many historic cricket matches, including both domestic and international fixtures."
+            
+        },
+        {
+            "groundid": 2,
+            "location": "hyderabad",
+            "groundname": "UppalStadium ",
+            "imageurl": "https://img.freepik.com/free-vector/cricket_1308-11652.jpg",
+            "price": 12000,
+            "contact": 9657884584,
+            "Capacity": 60000,
+            "email": "def@gmail.com",
+            "description":"The Rajiv Gandhi International Cricket Stadium, commonly known as Uppal Stadium, is situated in Uppal, Hyderabad, India. It is one of the leading cricket venues in the country, with a seating capacity of around 55,000 spectators. Renowned for its modern facilities and infrastructure, it has hosted numerous domestic and international cricket matches. "
+        },
+        {
+            "groundid": 3,
+            "location": "Mumbai",
+            "groundname": "Wankhede Stadium",
+            "imageurl": "",
+            "price": 20000,
+            "contact": "022-2279-5500",
+            "Capacity": 33000,
+            "email": "info@mca.co.in",
+            "description": "The Wankhede Stadium, located in Mumbai, Maharashtra, is one of the premier cricket stadiums in India. It has a seating capacity of around 33,000 spectators and has hosted numerous historic cricket matches, including the 2011 ICC Cricket World Cup final."
+        },
+        {
+            "groundid": 4,
+            "location": "Kolkata",
+            "groundname": "Eden Gardens",
+            "imageurl": "https://www.espncricinfo.com/inline/content/image/1264683.html?alt=1",
+            "price": 25000,
+            "contact": "033-2248-2443",
+            "Capacity": 66000,
+            "email": "cricket@cabcricket.com",
+            "description": "Eden Gardens, located in Kolkata, West Bengal, is one of the oldest and largest cricket stadiums in India. With a seating capacity of around 66,000 spectators, it has hosted numerous iconic cricket matches, including the 1987 ICC Cricket World Cup final."
+        },
+        {
+            "groundid": 5,
+            "location": "Chennai",
+            "groundname": "M. A. Chidambaram Stadium",
+            "imageurl": "https://www.espncricinfo.com/inline/content/image/1264688.html?alt=1",
+            "price": 18000,
+            "contact": "044-2854-1987",
+            "Capacity": 50000,
+            "email": "tnca@tnca.cricket",
+            "description": "The M. A. Chidambaram Stadium, commonly known as Chepauk Stadium, is situated in Chennai, Tamil Nadu. It has a seating capacity of around 50,000 spectators and has hosted many memorable cricket matches, including Test matches, One Day Internationals, and IPL games."
+        }
+    ]
+}

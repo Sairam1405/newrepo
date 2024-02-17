@@ -1,0 +1,43 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" formControlName="firstName">
+    </div>
+    <div>
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" formControlName="lastName">
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email">
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password">
+    </div>
+    <div>
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" formControlName="dob">
+    </div>
+    <div>
+      <label for="phoneNumber">Phone Number</label>
+      <input type="tel" id="phoneNumber" formControlName="phoneNumber">
+    </div>
+    <div formGroupName="address">
+      <div>
+        <label for="city">City</label>
+        <input type="text" id="city" formControlName="city">
+      </div>
+      <div>
+        <label for="state">State</label>
+        <input type="text" id="state" formControlName="state">
+      </div>
+      <div>
+        <label for="country">Country</label>
+        <input type="text" id="country" formControlName="country">
+      </div>
+    </div>
+    <button type="submit" [disabled]="!registrationForm.valid">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+  <p>Already  have an account? <a routerLink="/login">Sign Up</a></p>

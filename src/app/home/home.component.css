@@ -1,0 +1,27 @@
+.card-img-top {
+    width: 100vw;
+    height: 50vh; /* Default height */
+    object-fit: cover; /* Ensures the image covers the entire area */
+}
+
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 100vh; /* Set full viewport height on smaller screens */
+    }
+}
+
+
+
+
+/* home page 3 card images images */
+
+.card {
+    margin-bottom: 20px;
+    height: 100%; /* Ensure all cards have equal height */
+  }
+  
+  .card-img {
+    height: 200px; /* Adjust the image height as needed */
+    object-fit: cover;
+  }
+  
