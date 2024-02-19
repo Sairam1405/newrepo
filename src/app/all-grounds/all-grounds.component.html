@@ -1,7 +1,25 @@
-<div class="product-list" >
+<!-- <div class="container">
+    <div class="product-list">
+        <ng-container *ngFor="let v of data">
+            <app-all-grounds-cards [receive]="v"></app-all-grounds-cards>
+        </ng-container>
+    </div>
+</div> -->
 
-<ng-container *ngFor="let v of data">
-    <app-all-grounds-cards [receive]="v"></app-all-grounds-cards>
-</ng-container>
-    
+
+<input [(ngModel)] ="search">
+<button (click)="getLoc()">Submit</button>
+
+<div class="container">
+    <div class="product-list">
+        <app-all-grounds-cards *ngFor="let v of locat" [receive]="v"></app-all-grounds-cards>
+    </div>
 </div>
+
+<!-- <div class="container">
+    <div class="product-list">
+        <div *ngFor="let ground of data" (click)="navigateToGroundDetails(ground.groundid)">
+            <app-all-grounds-cards [receive]="ground"></app-all-grounds-cards>
+        </div>
+    </div>
+</div> -->

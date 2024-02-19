@@ -7,6 +7,7 @@ import { AllGroundsComponent } from './all-grounds/all-grounds.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
+import { AllGroundsBookComponent } from './all-grounds-book/all-grounds-book.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'all-grounds', component: AllGroundsComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'contacts', component: ContactComponent  },
+  { path: 'contacts', component: ContactComponent },
+  {path:'bookground/:id',component:AllGroundsBookComponent},
  
   // { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route
    { path: '**', redirectTo: '/home', pathMatch:'full' } // Wildcard route for unknown paths

@@ -11,9 +11,10 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { HeaderComponent } from './header/header.component';
 import { ContactComponent } from './contact/contact.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AllGroundsCardsComponent } from './all-grounds-cards/all-grounds-cards.component';
+import { AllGroundsBookComponent } from './all-grounds-book/all-grounds-book.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +28,13 @@ import { AllGroundsCardsComponent } from './all-grounds-cards/all-grounds-cards.
     HeaderComponent,
     ContactComponent,
     AllGroundsCardsComponent,
+    AllGroundsBookComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule
   ],

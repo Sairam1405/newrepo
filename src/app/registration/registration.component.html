@@ -23,7 +23,7 @@
       <label for="phoneNumber">Phone Number</label>
       <input type="tel" id="phoneNumber" formControlName="phoneNumber">
     </div>
-    <div formGroupName="address">
+  
       <div>
         <label for="city">City</label>
         <input type="text" id="city" formControlName="city">
@@ -36,7 +36,7 @@
         <label for="country">Country</label>
         <input type="text" id="country" formControlName="country">
       </div>
-    </div>
+     
     <button type="submit" [disabled]="!registrationForm.valid">Submit</button>
     <button type="reset">Reset</button>
   </form>

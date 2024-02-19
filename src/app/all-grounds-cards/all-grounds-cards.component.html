@@ -1,7 +1,7 @@
 <div class="p-card">
-    <img [src]="receive.imageurl" alt="hh">
-    <p class="groundname">{{receive.groundname}}</p>
-
-
+    {{receive.groundid}}
+    <a [routerLink]="['/bookground', receive.id]">
+        <img [src]="receive.imageurl" alt="Ground Image">
+        <div class="groundname">{{ receive.groundname }}</div>
+    </a>
 </div>
-
