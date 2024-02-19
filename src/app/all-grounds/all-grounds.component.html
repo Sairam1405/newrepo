@@ -9,7 +9,6 @@
 
 <input [(ngModel)] ="search">
 <button (click)="getLoc()">Submit</button>
-
 <div class="container">
     <div class="product-list">
         <app-all-grounds-cards *ngFor="let v of locat" [receive]="v"></app-all-grounds-cards>
