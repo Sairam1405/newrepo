@@ -7,6 +7,7 @@ import { AllGroundsComponent } from './all-grounds/all-grounds.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'registration', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'contacts', component: ContactComponent  },
+  {path: 'feedback', component : FeedbackComponent},
  
   // { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route
    { path: '**', redirectTo: '/home', pathMatch:'full' } // Wildcard route for unknown paths

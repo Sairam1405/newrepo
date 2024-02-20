@@ -1,0 +1,37 @@
+<div class="mt-5">
+<h1 class="text-center text-primary">Feedback Page</h1>
+</div>
+<div>
+    <div class="m-5">
+        <h3>Write your feedback about our website</h3>
+        <form action="" [formGroup]="feedform">
+                <textarea name=""   class="form-control w-50 m-2" formControlName="msg" placeholder="message"></textarea>
+                <p class="err" *ngIf="feedform.controls.msg.touched && feedform.controls.msg.errors?.['required']">Message can't be empty</p>
+                <input type="text" class="form-control w-50 m-2" formControlName = "name" placeholder="Enter your name">
+                <p class="err" *ngIf="feedform.controls.name.touched && feedform.controls.name.errors?.['required']">Name is required</p>
+                <input type="email" class="form-control w-50 m-2" formControlName="mail" placeholder="Enter Email"> 
+                <p class="err" *ngIf="(feedform.controls.mail.touched && feedform.controls.mail.errors?.['required'])">Email is required</p>
+                <p class="err" *ngIf="(feedform.controls.mail.touched && feedform.controls.mail.errors?.['pattern'])">Email is not valid</p>
+                <select name="rating" class="form-control w-50 m-2" formControlName="rating" placeholder="Select rating">
+                    <option value="" selected>SELECT RATING</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <p class="err" *ngIf="feedform.controls.rating.touched && feedform.controls.rating.errors?.['required']">Please select the rating</p>
+            <div>
+                <button class="btn btn-primary m-2" (click)="submit()"  *ngIf="feedform.valid else e">Submit Feedback</button>
+            </div>
+            <ng-template #e>
+                <button disabled="true" class="btn btn-primary m-2">Submit Feedback</button>
+            </ng-template>
+        </form>
+    </div>
+</div>
+
+Msg : {{feedform.controls.msg.value}}
+Name : {{feedform.controls.name.value}}
+mail : {{feedform.controls.mail.value}}
+rating : {{feedform.controls.rating.value}}
