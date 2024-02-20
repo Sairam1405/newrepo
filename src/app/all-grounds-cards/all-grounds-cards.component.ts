@@ -6,5 +6,5 @@ import { Component, Input, input } from '@angular/core';
   styleUrl: './all-grounds-cards.component.css'
 })
 export class AllGroundsCardsComponent {
- @Input() receive:any
+//  @Input() receive:any
 }

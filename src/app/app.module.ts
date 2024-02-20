@@ -15,7 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AllGroundsCardsComponent } from './all-grounds-cards/all-grounds-cards.component';
 import { FeedbackComponent } from './feedback/feedback.component';
-import { LogoutComponent } from './logout/logout.component';
+import { AllGroundsBookComponent } from './all-grounds-book/all-grounds-book.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +31,8 @@ import { LogoutComponent } from './logout/logout.component';
     ContactComponent,
     AllGroundsCardsComponent,
     FeedbackComponent,
-    LogoutComponent,
-    
+    AllGroundsBookComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +40,7 @@ import { LogoutComponent } from './logout/logout.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
+    
   ],
   providers: [
     provideClientHydration()

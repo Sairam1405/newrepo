@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CricketServiceService } from '../cricket-service.service';
 
 @Component({
   selector: 'app-locations',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrl: './locations.component.css'
 })
 export class LocationsComponent {
+    constructor(private ht : CricketServiceService){
+      this.getLocations();
+    }
 
+    data : any;
+
+    getLocations(){
+      this.ht.getAllLocations().subscribe((res) =>{
+        this.data = res;
+      })
+    }
 }

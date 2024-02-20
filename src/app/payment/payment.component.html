@@ -1,0 +1,149 @@
+<!-- <div class="container mt-4" style="border: 1px solid black;">
+    <div class="payment">
+        <h2>Make Payment</h2>
+        <hr>
+        <div class="d">
+            <div class="row">
+                <div class="col-6" style="border: 1px solid black;">
+                    <table>
+                        <tr>
+                            <td><label>Card Number</label></td>
+                            <td colspan="2"><input type="text" class="form-control w-20"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Name Of Card</label></td>
+                            <td colspan="2"><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Select Card Type</label></td>
+                            <td colspan="2"><select name="" id=""></select></td>
+                        </tr>
+                        <tr>
+                            <td><label>Expiry Year/Month</label></td>
+                            <td><select name="" id=""></select></td>
+                            <td><select name="" id=""></select></td>
+                        </tr>
+                        <tr>
+                            <td><label>Amount</label></td>
+                            <td><input type="text"></td>
+                        </tr>
+                    </table>
+                    <button (click)="pay()">Make Payment</button>
+                        
+                </div>
+                <div class="col-6" style="border: 1px solid black; height: 40vh; padding: 15px;">
+                    <img src="https://i.pinimg.com/originals/65/29/a7/6529a74c68df9e3fbe26892cffd19862.jpg" alt="No Image Found" style="height: 35vh; width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div class="container mt-4 payment" style="border: 1px solid black;">
+    <h2>Make Payment</h2>
+    <hr>
+    <div class="d">
+        <div class="row">
+            <div class="col-md-6 payment-details" style="border: 1px solid black;">
+                <table>
+                    <tr>
+                        <td><label for="cardNumber">Card Number</label></td>
+                        <td colspan="2"><input type="text" class="form-control" id="cardNumber"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="cardName">Name Of Card</label></td>
+                        <td colspan="2"><input type="text" id="cardName"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="cardType">Select Card Type</label></td>
+                        <td colspan="2">
+                            <select class="form-control" id="cardType" name="cardType">
+                                
+                                <option value="">Seelct Card Type</option>
+                                <option value="visa">Visa</option>
+                                <option value="mastercard">MasterCard</option>
+                                
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="expiryYear">Expiry Year</label></td>
+                        <td><select class="form-control" id="expiryYear" name="expiryYear">
+                            <option value="">Select Year</option>
+                            <option value="2000">2000</option>
+                            <option value="2001">2001</option>
+                        </select></td>
+                        <td><select class="form-control" id="expiryMonth" name="expiryMonth">
+                            <option value="">Select Month</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="amount">Amount</label></td>
+                        <td colspan="2"><input type="text" id="amount"></td>
+                    </tr>
+                </table>
+                <button class="btn btn-primary" (click)="pay()">Make Payment</button>
+            </div>
+            <div class="col-md-6 payment-details" style="border: 1px solid black;">
+                <img src="https://i.pinimg.com/originals/65/29/a7/6529a74c68df9e3fbe26892cffd19862.jpg"
+                    alt="No Image Found" class="img-fluid" >
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container mt-4">
+    <div class="payment">
+        <h2>Make Payment</h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-6 payment-details">
+                <table class="table">
+                    <tr>
+                        <td><label for="cardNumber">Card Number</label></td>
+                        <td colspan="2"><input type="text" class="form-control" id="cardNumber"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="cardName">Name Of Card</label></td>
+                        <td colspan="2"><input type="text" class="form-control" id="cardName"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="cardType">Select Card Type</label></td>
+                        <td colspan="2">
+                            <select class="form-control" id="cardType" name="cardType">
+                                <option value="" selected disabled>Select Card Type</option>
+                                <option value="visa">Visa</option>
+                                <option value="mastercard">MasterCard</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="expiryYear">Expiry Year</label></td>
+                        <td><select class="form-control" id="expiryYear" name="expiryYear">
+                            <option value="" selected disabled>Select Year</option>
+                            <option value="2000">2000</option>
+                            <option value="2001">2001</option>
+                        </select></td>
+                        <td><select class="form-control" id="expiryMonth" name="expiryMonth">
+                            <option value="" selected disabled>Select Month</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="amount">Amount</label></td>
+                        <td colspan="2"><input type="text" class="form-control" id="amount"></td>
+                    </tr>
+                </table>
+                <button class="btn btn-primary" (click)="pay()">Make Payment</button>
+            </div>
+            <div class="col-md-6 payment-details">
+                <img src="https://i.pinimg.com/originals/65/29/a7/6529a74c68df9e3fbe26892cffd19862.jpg"
+                    alt="No Image Found" class="img-fluid" >
+            </div>
+        </div>
+    </div>
+</div>
+

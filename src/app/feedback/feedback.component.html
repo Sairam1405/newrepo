@@ -1,4 +1,4 @@
-<div class="mt-5">
+<!-- <div class="mt-5">
 <h1 class="text-center text-primary">Feedback Page</h1>
 </div>
 <div>
@@ -29,9 +29,42 @@
             </ng-template>
         </form>
     </div>
+</div> -->
+
+<div class="feedback-container md-3">
+    <!-- <h1 class="text-center text-primary">Feedback Page</h1>  -->
+    <div class="feedback-form m-5">
+        <h3>Write your feedback about our website</h3>
+        <form [formGroup]="feedform" (ngSubmit)="submit()" novalidate>
+            <textarea class="form-control  m-2" formControlName="msg" placeholder="Enter your message"></textarea>
+            <p class="err" *ngIf="feedform.controls.msg.touched && feedform.controls.msg.errors?.['required']">Message can't be empty</p>
+
+            <input type="text" class="form-control  m-2" formControlName="name" placeholder="Enter your name">
+            <p class="err" *ngIf="feedform.controls.name.touched && feedform.controls.name.errors?.['required']">Name is required</p>
+
+            <input type="email" class="form-control  m-2" formControlName="mail" placeholder="Enter your email"> 
+            <p class="err" *ngIf="feedform.controls.mail.touched && feedform.controls.mail.errors?.['required']">Email is required</p>
+            <p class="err" *ngIf="feedform.controls.mail.touched && feedform.controls.mail.errors?.['pattern']">Enter a valid email address</p>
+
+            <select class="form-control  m-2" formControlName="rating" placeholder="Select rating">
+                <option value="" selected>SELECT RATING</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <p class="err" *ngIf="feedform.controls.rating.touched && feedform.controls.rating.errors?.['required']">Please select the rating</p>
+
+            <div>
+                <button class="btn btn-primary m-2" type="submit" [disabled]="!feedform.valid">Submit Feedback</button>
+            </div>
+        </form>
+    </div>
 </div>
 
-Msg : {{feedform.controls.msg.value}}
+
+<!-- Msg : {{feedform.controls.msg.value}}
 Name : {{feedform.controls.name.value}}
 mail : {{feedform.controls.mail.value}}
-rating : {{feedform.controls.rating.value}}
+rating : {{feedform.controls.rating.value}} -->

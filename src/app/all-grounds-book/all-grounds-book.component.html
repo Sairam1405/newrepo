@@ -1,0 +1,138 @@
+ <!-- <div class="div1" >
+ <div *ngIf=" data">
+    <h1 class="text-center  mb-5">{{data.groundname}}</h1>
+   <div class="row" >
+        <div class="col-6" style="border: 2px solid black; width: 50% ;height : 50vh;">
+          <img src="{{data.imageurl}}" alt="No Image Found" class="img" >
+        </div>
+        <div class="col-6" >
+            <div class="row">
+                <div class="col">
+                    <h3>{{data.groundname}}</h3>
+                    <p>{{data.description}}</p>
+
+                    <table>
+                        <tr>
+                            <td>Booking Cost</td>
+                            <td>:</td>
+                            <td>{{data.price}}</td>
+                        </tr>
+                        <tr>
+                            <td>Location</td>
+                            <td>:</td>
+                            <td>{{data.location}}</td>
+                        </tr>
+                        <tr>
+                            <td>Contact</td>
+                            <td>:</td>
+                            <td>{{data.contact}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>:</td>
+                            <td>{{data.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Total Capacity</td>
+                            <td>:</td>
+                            <td>{{data.Capacity}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <button class="btn btn-primary mt-2" (click)="bookGround(data.price)">BOOK THE GROUND</button>
+        </div>
+
+   </div>
+   <div class="row">
+        <div class="col">
+            <h2 class="m-2">Enter Your Comment</h2>
+            <input type="text" placeholder="Enter Title" class="form-control w-50 m-2">
+            <textarea placeholder="Write your comment" class="form-control w-50 m-2"></textarea>
+            <button class="btn btn-primary m-2">Submit Comment</button>
+        </div>
+   </div>
+</div>
+</div> -->
+
+<div class="ground-details">
+    <div *ngIf="data">
+        <h1 class="text-center mb-5">{{data.groundname}}</h1>
+        <div class="row">
+            <div class="col-6 ground-image">
+                <img src="{{data.imageurl}}" alt="No Image Found" class="img">
+            </div>
+            <div class="col-6 ground-info">
+                <div class="row">
+                    <div class="col">
+                        <h3>{{data.groundname}}</h3>
+                        <p>{{data.description}}</p>
+                        <table class="info-table">
+                            <tr>
+                                <td>Booking Cost</td>
+                                <td>:</td>
+                                <td>{{data.price}}</td>
+                            </tr>
+                            <tr>
+                                <td>Location</td>
+                                <td>:</td>
+                                <td>{{data.location}}</td>
+                            </tr>
+                            <tr>
+                                <td>Contact</td>
+                                <td>:</td>
+                                <td>{{data.contact}}</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>:</td>
+                                <td>{{data.email}}</td>
+                            </tr>
+                            <tr>
+                                <td>Total Capacity</td>
+                                <td>:</td>
+                                <td>{{data.Capacity}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <button class="btn btn-primary mt-2" (click)="bookGround(data.price)">BOOK THE GROUND</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2 class="m-2 mt-5">Enter Your Comment</h2>
+                <input type="text" placeholder="Enter Title" class="form-control w-50 m-2">
+                <textarea placeholder="Write your comment" class="form-control w-50 m-2"></textarea>
+                <button class="btn btn-primary m-2">Submit Comment</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="row">
+                        <div class="col">Booking Cost</div>
+                        <div class="col">:</div>
+                        <div class="col">{{data.price}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Location</div>
+                        <div class="col">:</div>
+                        <div class="col">{{data.location}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Contact</div>
+                        <div class="col">:</div>
+                        <div class="col">{{data.contact}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Email</div>
+                        <div class="col">:</div>
+                        <div class="col">{{data.email}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Total Capacity</div>
+                        <div class="col">:</div>
+                        <div class="col">{{data.Capacity}}</div>
+                    </div> -->

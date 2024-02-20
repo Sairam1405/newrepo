@@ -1,0 +1,47 @@
+/* .container {
+    padding: 20px;
+}
+
+.payment {
+    text-align: center;
+}
+
+.payment-details {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-image {
+    height: 40vh;
+    padding: 15px;
+}
+
+img {
+    width: 100%;
+    height: 33vh;
+} */
+
+.container {
+    padding: 20px;
+}
+
+.payment {
+    text-align: center;
+}
+
+.payment-details {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+

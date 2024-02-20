@@ -1,7 +1,66 @@
-<div class="product-list" >
+<!-- <div class="container">
+    <div class="product-list">
+        <ng-container *ngFor="let v of data">
+            <app-all-grounds-cards [receive]="v"></app-all-grounds-cards>
+        </ng-container>
+    </div>
+</div> -->
 
-<ng-container *ngFor="let v of data">
-    <app-all-grounds-cards [receive]="v"></app-all-grounds-cards>
-</ng-container>
-    
+
+<!-- <input [(ngModel)] ="search">
+<button (click)="getLoc()">Submit</button> -->
+<!-- <select name="search"  placeholder="Select Location" [(ngModel)]="search"> -->
+<div style="padding: 10px; float: right;" >
+    <select class="form-control text-center"  name="selectground" [(ngModel)]="search" id="">
+        <option value="" selected disabled>--Select Grounds--</option>
+        <option value="" selected>All Grounds</option>
+        <option value="hyderabad">Hyderabad</option>
+        <option value="Bengalore">Bengalore</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Mohali">Mohali</option>
+        <option value="Ahmedabad">Ahmedabad</option>
+        <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+        <option value="Indore">Indore</option>
+    </select>
 </div>
+
+<!-- <div class="container">
+    <div class="product-list">
+         <app-all-grounds-cards *ngFor="let v of locat" [receive]="v"></app-all-grounds-cards> -->
+        <!-- <div class="p-card" *ngFor="let v of locat"> 
+            <a [routerLink]="['/bookground', v.id]" style="text-decoration-line: none;">
+                <img [src]="v.imageurl" alt="Ground Image">
+                <div class="groundname">{{ v.groundname }}</div>
+            </a>
+        </div>
+    </div>
+</div>  -->
+
+<div class="container">
+    <div class="row product-list">
+        <!-- <app-all-grounds-cards *ngFor="let v of locat" [receive]="v"></app-all-grounds-cards> -->
+        <div class="col-md-4 p-card" *ngFor="let v of locat"> 
+            <a [routerLink]="['/bookground', v.id]" style="text-decoration-line: none;">
+                <div class="card mb-4">
+                    <img [src]="v.imageurl" alt="Ground Image">
+                    <div class="card-body">
+                        <h6 class="card-title groundname">{{v.groundname}}</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div class="container">
+    <div class="product-list">
+        <div *ngFor="let ground of data" (click)="navigateToGroundDetails(ground.groundid)">
+            <app-all-grounds-cards [receive]="ground"></app-all-grounds-cards>
+        </div>
+    </div>
+</div> -->

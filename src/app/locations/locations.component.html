@@ -1,1 +1,30 @@
-<p>locations works!</p>
+<!-- <div class="container">
+    <div class="product-list">
+        <div class="p-card">
+            <div *ngFor="let d of data">
+                <a routerLink="/all-grounds" style="text-decoration-line: none;"
+                    [queryParams]="{'location' : d.locationName}">
+                    <img [src]="d.locationUrl" alt="Ground Image">
+                    <div class="groundname">{{d.locationName}}</div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="row product-list">
+      <div class="col-md-4 p-card" *ngFor="let d of data">
+        <a routerLink="/all-grounds" style="text-decoration-line: none;" [queryParams]="{'location' : d.locationName}">
+          <div class="card mb-4">
+            <img [src]="d.locationUrl" class="card-img-top" alt="Ground Image">
+            <div class="card-body">
+              <h6 class="card-title groundname">{{d.locationName}}</h6>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  

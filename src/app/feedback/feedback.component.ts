@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
+
+
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.component.html',
@@ -20,8 +22,10 @@ export class FeedbackComponent {
 
 
 
+
   submit(){
    console.log(this.feedform);
+   this.feedform.reset();
   }
   
 

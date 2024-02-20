@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CricketServiceService } from '../cricket-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,23 +9,32 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  loginForm: FormGroup;
+  
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private hp:CricketServiceService,private root:Router) { }
 
-  ngOnInit(): void {
-    this.loginForm = this.fb.group({
+    
+    
+    loginForm:FormGroup = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
-    });
-  }
+    })
 
-  onSubmit() {
-    if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
-      // Implement login logic here (e.g., send login request to backend)
-    } else {
-      // Form is invalid, do something (e.g., display error messages)
+    onSubmit() {
+      this.hp.getLoginValidation().subscribe((res: any[]) => {
+        const user = res.find((item) => {
+          return item.email === this.loginForm.get('username').value && item.password === this.loginForm.get('password').value;
+        });
+        if (user) {
+          alert("Login is successful");
+          this.loginForm.reset();
+          this.root.navigate(['home']); // Use router to navigate
+        } else {
+          alert("User is not there, provide correct credentials");
+          this.loginForm.reset();
+        }
+      }, err => {
+        alert("Something went wrong");
+      });
     }
-  }
 }

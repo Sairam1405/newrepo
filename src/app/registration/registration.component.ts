@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CricketServiceService } from '../cricket-service.service';
+import { Router } from '@angular/router';
+import { error } from 'console';
 
 @Component({
   selector: 'app-registration',
@@ -8,9 +11,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegistrationComponent {
 
-  registrationForm: FormGroup ;
+  registrationForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private hp: CricketServiceService,private root:Router) { }
 
   ngOnInit(): void {
     this.registrationForm = this.fb.group({
@@ -20,20 +23,23 @@ export class RegistrationComponent {
       password: ['', [Validators.required, Validators.minLength(6)]],
       dob: ['', Validators.required],
       phoneNumber: ['', Validators.required],
-      address: this.fb.group({
-        city: ['', Validators.required],
-        state: ['', Validators.required],
-        country: ['', Validators.required]
-      })
-    });
+
+      city: ['', Validators.required],
+      state: ['', Validators.required],
+      country: ['', Validators.required]
+    })
+
   }
 
   onSubmit() {
-    if (this.registrationForm.valid) {
-      console.log(this.registrationForm.value);
-      // Send registration data to backend or perform other actions
-    } else {
-      // Form is invalid, do something (e.g., display error messages)
-    }
-  }
+
+    this.hp.postRegisterForm(this.registrationForm.value).subscribe((res) => {
+      alert("registarion is done")
+      this.registrationForm.reset()
+      this.root.navigate(['login'])
+    },err=>{
+      alert("something went wrong");
+      
+    })
+}
 }
