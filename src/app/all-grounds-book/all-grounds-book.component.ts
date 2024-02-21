@@ -26,9 +26,19 @@ export class AllGroundsBookComponent{
   ground : any;
   data;
   gprice : any;
+  gcom : any;
+  comment : any;
+  name = localStorage.getItem('name');
+  desp : any;
   constructor(private display : CricketServiceService, private route : ActivatedRoute, private router : Router){
+    this.getAllComments();
   }
 
+  getAllComments() {
+    this.display.getComments().subscribe((r) => {
+      this.comment = r;
+    })
+  }
   getGround(){
     this.route.paramMap.subscribe((res) =>{
       let id = res.get('id');
@@ -38,14 +48,45 @@ export class AllGroundsBookComponent{
       })
     })
   }
+  getComments() {
+    this.route.paramMap.subscribe((res) => {
+      let id = res.get('id');
+      this.display.getComments().subscribe((r) => {
+        if (id) {
+          this.gcom = this.comment.filter(u => { return u.groundid == id })
+        } else {
+
+        }
+      })
+    })
+  }
+
+  addComment() {
+    console.log("Commented")
+    this.route.paramMap.subscribe((res) => {
+      let id = res.get('id');
+      let obj = {
+        "des": this.desp,
+        "groundid": id,
+        "name": this.name
+      }
+      this.display.postComment(obj).subscribe(g => this.getComments())
+    })
+    this.desp = "";
+    this.getComments();
+    this.getAllComments();
+  }
 
   ngOnInit(){
     this.getGround();
+    this.getComments()
+
   }
 
   ngDocheck(){
     this.getGround();
-  }
+    this.getComments();
+    }
 
   bookGround(price : any){
     this.gprice = price;

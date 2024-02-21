@@ -55,6 +55,7 @@
 </div>
 </div> -->
 
+<app-header></app-header>
 <div class="ground-details">
     <div *ngIf="data">
         <h1 class="text-center mb-5">{{data.groundname}}</h1>
@@ -96,17 +97,23 @@
                         </table>
                     </div>
                 </div>
-                <button class="btn btn-primary mt-2" (click)="bookGround(data.price)">BOOK THE GROUND</button>
+                <button class="btn btn-primary mt-2" (click)="bookGround(data.price)" [disabled]="!name">BOOK THE GROUND</button>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <h2 class="m-2 mt-5">Enter Your Comment</h2>
-                <input type="text" placeholder="Enter Title" class="form-control w-50 m-2">
-                <textarea placeholder="Write your comment" class="form-control w-50 m-2"></textarea>
-                <button class="btn btn-primary m-2">Submit Comment</button>
+                <!-- <input type="text" placeholder="Enter Title" class="form-control w-50 m-2"> -->
+                <textarea placeholder="Write your comment" class="form-control w-50 m-2" required [(ngModel)]="desp"></textarea>
+                <!-- <button class="btn btn-primary m-2">Submit Comment</button> -->
+                <p *ngIf="desp"><button class="btn btn-primary m-2" [disabled]="!name" (click)="addComment()">Submit Comment</button></p>
+                <p *ngIf="!desp"><button class="btn btn-primary m-2" disabled (click)="addComment()">Submit Comment</button></p>
             </div>
         </div>
+    </div>
+    <div *ngFor="let c of gcom" class="comment-container">
+        <p class="posted-by">Posted By: {{c.name}}</p>
+        <p class="comment-description">{{c.des}}</p>
     </div>
 </div>
 

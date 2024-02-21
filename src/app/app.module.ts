@@ -17,6 +17,7 @@ import { AllGroundsCardsComponent } from './all-grounds-cards/all-grounds-cards.
 import { FeedbackComponent } from './feedback/feedback.component';
 import { AllGroundsBookComponent } from './all-grounds-book/all-grounds-book.component';
 import { PaymentComponent } from './payment/payment.component';
+import { UserheadComponent } from './users/userhead/userhead.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { PaymentComponent } from './payment/payment.component';
     AllGroundsCardsComponent,
     FeedbackComponent,
     AllGroundsBookComponent,
-    PaymentComponent
+    PaymentComponent,
+    UserheadComponent
   ],
   imports: [
     BrowserModule,

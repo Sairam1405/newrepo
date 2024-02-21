@@ -10,6 +10,8 @@ import { ContactComponent } from './contact/contact.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { AllGroundsBookComponent } from './all-grounds-book/all-grounds-book.component';
 import { PaymentComponent } from './payment/payment.component';
+import { UserheadComponent } from './users/userhead/userhead.component';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path : 'feedback', component : FeedbackComponent},
   { path : 'bookground/:id', component : AllGroundsBookComponent},
   { path : 'payment', component: PaymentComponent},
+  { path : 'uhead', component : UserheadComponent},
+  { path : 'out', component : LogoutComponent},
   // { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route
    { path: '**', redirectTo: '/home', pathMatch:'full' } // Wildcard route for unknown paths
 ];

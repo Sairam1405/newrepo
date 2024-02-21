@@ -22,6 +22,13 @@ export class CricketServiceService {
     return this.hp.get('http://localhost:3000/locations')
   }
 
+  getComments(){
+    return this.hp.get('http://localhost:3000/comments')
+  }
+
+  postComment(body){
+    return this.hp.post('http://localhost:3000/comments', body)
+  }
 //////////SIGNUP()/////////////////////////
 
 postRegisterForm(body){
