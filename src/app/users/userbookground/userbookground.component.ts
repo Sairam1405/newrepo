@@ -75,10 +75,10 @@ export class UserbookgroundComponent {
 
   }
 
-  ngDocheck(){
-    this.getGround();
-    this.getComments();
-    }
+  // ngDocheck(){
+  //   this.getGround();
+  //   this.getComments();
+  //   }
 
   bookGround(price : any){
     console.log("Click the book button")

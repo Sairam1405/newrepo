@@ -88,10 +88,10 @@ export class AllGroundsBookComponent{
 
   }
 
-  ngDocheck(){
-    this.getGround();
-    this.getComments();
-    }
+  // ngDocheck(){
+  //   this.getGround();
+  //   this.getComments();
+  //   }
 
   bookGround(price : any){
     this.gprice = price;
