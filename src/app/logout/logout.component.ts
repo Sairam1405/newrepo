@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class LogoutComponent {
   constructor(private route : Router){
     localStorage.removeItem('name');
+    localStorage.removeItem('mobile')
     route.navigate(['home'])
   }
 }

@@ -1,34 +1,20 @@
 import { Component } from '@angular/core';
-import { CricketServiceService } from '../cricket-service.service';
+import { CricketServiceService } from '../../cricket-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-all-grounds-book',
-  templateUrl: './all-grounds-book.component.html',
-  styleUrl: './all-grounds-book.component.css'
+  selector: 'app-userbookground',
+  templateUrl: './userbookground.component.html',
+  styleUrl: './userbookground.component.css'
 })
-export class AllGroundsBookComponent{
-
-  // ground ;
-
-  // constructor(private hp:CricketServiceService, private route : ActivatedRoute){}
-
-  // ngOnInit(){
-  //   this.route.paramMap.subscribe(p =>{
-  //     let gid = Number(p.get('id'));
-  //     this.ground = this.hp.Get().subscribe(r =>{
-        
-  //     })
-  //   })
-  // }
-
+export class UserbookgroundComponent {
   ground : any;
   data;
   gprice : any;
   gcom : any;
   comment : any;
   name = localStorage.getItem('name');
+  p = localStorage.getItem('mobile');
   desp : any;
   da : any;
   constructor(private display : CricketServiceService, private route : ActivatedRoute, private router : Router){
@@ -67,8 +53,9 @@ export class AllGroundsBookComponent{
     this.route.paramMap.subscribe((res) => {
       let id = res.get('id');
       const date = new Date();
-      let d = date.getDate+"-"+date.getMonth+"-"+date.getFullYear+
-      "("+date.getHours+":"+date.getMinutes+":"+date.getSeconds()+")"
+      let d = date.getDate()+"-"+date.getMonth()+"-"+date.getFullYear()+
+      "("+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()+")"
+
       let obj = {
         "des": this.desp,
         "groundid": id,
@@ -94,9 +81,26 @@ export class AllGroundsBookComponent{
     }
 
   bookGround(price : any){
+    console.log("Click the book button")
     this.gprice = price;
-    this.router.navigate(['/login'])
+    let bstatus = "paid"
+    this.route.paramMap.subscribe((res) => {
+      let id = res.get('id');
+      let body ={
+      "name" : this.name,
+      "date" : this.da,
+      "price" : this.gprice,
+      "mobile" : this.p,
+      "groundid" : id,
+      "status" : bstatus
+    }
+    this.display.addBooking(body).subscribe((r) =>{
+
+    })
+    this.router.navigate(['/payment'])
+  })
   }
+
 
   // constructor(private display: CricketServiceService, private route : ActivatedRoute) {
   //   this.display.Get().subscribe((res : any[])=>{
@@ -152,11 +156,4 @@ export class AllGroundsBookComponent{
     //   }
     // })
   //}
-
-  
-
-  
-  
- 
-    
 }

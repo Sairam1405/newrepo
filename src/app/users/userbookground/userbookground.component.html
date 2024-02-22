@@ -1,3 +1,4 @@
+<app-userhead></app-userhead>
  <!-- <div class="div1" >
  <div *ngIf=" data">
     <h1 class="text-center  mb-5">{{data.groundname}}</h1>
@@ -55,7 +56,7 @@
 </div>
 </div> -->
 
-<app-header></app-header>
+
 <div class="ground-details">
     <div *ngIf="data">
         <h1 class="text-center mb-5">{{data.groundname}}</h1>
@@ -104,8 +105,8 @@
                     <div class="col-9">
                         <input type="date" [(ngModel)]="da" id="datepicker" class="form-control mt-3 date-input ">
                     </div>
-                </div>     
-                <button class="btn btn-primary mt-2" (click)="bookGround(data.price)" >BOOK THE GROUND</button>
+                </div>                
+                <button class="btn btn-primary mt-2" (click)="bookGround(data.price)" [disabled]="!da">BOOK THE GROUND</button>
             </div>
         </div>
         <div class="row">
@@ -119,7 +120,6 @@
             </div>
         </div>
     </div>
-    <h3>All Comments</h3>
     <div *ngFor="let c of gcom" class="comment-container">
         <div class="comment-header">
             <p class="posted-by">Posted By: {{c.name}} <strong>On Date : </strong>{{c.date}}</p>
@@ -157,3 +157,4 @@
                         <div class="col">:</div>
                         <div class="col">{{data.Capacity}}</div>
                     </div> -->
+

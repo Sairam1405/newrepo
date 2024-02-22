@@ -94,6 +94,7 @@
     </div>
 </div> -->
 
+<app-userhead></app-userhead>
 <div class="container mt-4">
     <div class="payment">
         <h2>Make Payment</h2>
@@ -103,16 +104,16 @@
                 <table class="table">
                     <tr>
                         <td><label for="cardNumber">Card Number</label></td>
-                        <td colspan="2"><input type="text" class="form-control" id="cardNumber"></td>
+                        <td colspan="2"><input type="text" class="form-control" id="cardNumber" [(ngModel)]="pa.cnumber"></td>
                     </tr>
                     <tr>
                         <td><label for="cardName">Name Of Card</label></td>
-                        <td colspan="2"><input type="text" class="form-control" id="cardName"></td>
+                        <td colspan="2"><input type="text" class="form-control" id="cardName" [(ngModel)]="pa.cname"></td>
                     </tr>
                     <tr>
                         <td><label for="cardType">Select Card Type</label></td>
                         <td colspan="2">
-                            <select class="form-control" id="cardType" name="cardType">
+                            <select class="form-control" id="cardType" name="cardType" [(ngModel)]="pa.ctype">
                                 <option value="" selected disabled>Select Card Type</option>
                                 <option value="visa">Visa</option>
                                 <option value="mastercard">MasterCard</option>
@@ -121,23 +122,33 @@
                     </tr>
                     <tr>
                         <td><label for="expiryYear">Expiry Year</label></td>
-                        <td><select class="form-control" id="expiryYear" name="expiryYear">
+                        <td><select class="form-control" id="expiryYear" name="expiryYear" [(ngModel)]="pa.eyear">
                             <option value="" selected disabled>Select Year</option>
                             <option value="2000">2000</option>
                             <option value="2001">2001</option>
                         </select></td>
-                        <td><select class="form-control" id="expiryMonth" name="expiryMonth">
+                        <td><select class="form-control" id="expiryMonth" name="expiryMonth" [(ngModel)]="pa.emonth">
                             <option value="" selected disabled>Select Month</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td><label for="amount">Amount</label></td>
                         <td colspan="2"><input type="text" class="form-control" id="amount"></td>
-                    </tr>
+                    </tr> -->
                 </table>
-                <button class="btn btn-primary" (click)="pay()">Make Payment</button>
+                <button class="btn btn-primary" (click)="pay()" [disabled]="!pa">Make Payment</button>
             </div>
             <div class="col-md-6 payment-details">
                 <img src="https://i.pinimg.com/originals/65/29/a7/6529a74c68df9e3fbe26892cffd19862.jpg"

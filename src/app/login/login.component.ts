@@ -23,13 +23,14 @@ export class LoginComponent {
     onSubmit() {
       this.hp.getLoginValidation().subscribe((res: any[]) => {
         const user = res.find((item) => {
-          localStorage.setItem('name', item.email);
+          localStorage.setItem('name', item.firstName);
+          localStorage.setItem('mobile', item.phoneNumber);
           return item.email === this.loginForm.get('username').value && item.password === this.loginForm.get('password').value;
         });
         if (user) {
           alert("Login is successful");
           this.loginForm.reset();
-          this.root.navigate(['uhead']); // Use router to navigate
+          this.root.navigate(['udashboard']); // Use router to navigate
         } else {
           alert("User is not there, provide correct credentials");
           this.loginForm.reset();

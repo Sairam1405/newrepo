@@ -29,6 +29,15 @@ export class CricketServiceService {
   postComment(body){
     return this.hp.post('http://localhost:3000/comments', body)
   }
+
+  getBookings(){
+    return this.hp.get('http://localhost:3000/bookings');
+  }
+
+  addBooking(body){
+    return this.hp.post('http://localhost:3000/bookings', body);
+  }
+
 //////////SIGNUP()/////////////////////////
 
 postRegisterForm(body){

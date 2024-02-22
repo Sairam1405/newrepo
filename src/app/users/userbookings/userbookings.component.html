@@ -1,0 +1,133 @@
+<!-- <app-userhead></app-userhead>
+
+<div class="bookings-container container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Date</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let n of bookname">
+                <td>{{n.name}}</td>
+                <td>{{n.mobile}}</td>
+                <td>{{n.price}}</td>
+                <td>{{n.date}}</td>
+                <td><button class="view-button" (click)="bookinfo(n)">View</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container" *ngIf="bookdeatils">
+    <h2>Booking Details</h2>
+    <div class="row">
+        <div class="col-6">
+            Customer Id : {{userinfo.id}}
+            Customer Name : {{userinfo.name}}
+            Booking Status : {{userinfo.status}}
+        </div>
+        <div class="col-6">
+            Booking Date : {{userinfo.date}}
+            Mobile : {{userinfo.mobile}}
+            Amount : {{userinfo.price}}
+        </div>
+    </div>
+    <h2>Booking Items</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Ground Name</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Capacity</th>
+                <th>Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let d of grounddetails">
+                <td>{{d.imageurl}}</td>
+                <td>{{d.groundname}}</td>
+                <td>{{d.contact}}</td>
+                <td>{{d.email}}</td>
+                <td>{{d.Capacity}}</td>
+                <td>{{d.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+
+<app-userhead></app-userhead>
+
+<div class="bookings-container container" *ngIf="!bookdeatils">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Date</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let n of bookname">
+                <td>{{n.name}}</td>
+                <td>{{n.mobile}}</td>
+                <td>{{n.date}}</td>
+                <td>{{n.price}}</td>
+                <td><button class="view-button" (click)="bookinfo(n)">View</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="details-container container" *ngIf="bookdeatils">
+    <h2>Booking Details</h2>
+    <div class="details-row row">
+        <div class="col-6">
+            <p><strong>Customer Id:</strong> {{userinfo.id}}</p>
+            <p><strong>Customer Name:</strong> {{userinfo.name}}</p>
+            <p><strong>Booking Status:</strong> {{userinfo.status}}</p>
+        </div>
+        <div class="col-6">
+            <p><strong>Booking Date:</strong> {{userinfo.date}}</p>
+            <p><strong>Mobile:</strong> {{userinfo.mobile}}</p>
+            <p><strong>Amount:</strong> {{userinfo.price}}</p>
+            <!-- <p><strong>Groundid :</strong>{{userinfo.groundid}}</p> -->
+        </div>
+    </div>
+    <h2>Booking Items</h2>
+    <table class="details-table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Ground Name</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Capacity</th>
+                <th>Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="grounddetails">
+                <td><img src="{{grounddetails.imageurl}}" alt="Ground Image" class="ground-image"></td>
+                <td>{{grounddetails.groundname}}</td>
+                <td>{{grounddetails.contact}}</td>
+                <td>{{grounddetails.email}}</td>
+                <td>{{grounddetails.Capacity}}</td>
+                <td>{{grounddetails.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container" *ngIf="bookdeatils">
+    <button (click)="moveto()">Back To My Bookings</button>
+</div>
